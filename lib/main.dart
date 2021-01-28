@@ -26,10 +26,12 @@ class _HomePageState extends State<HomePage> {
   bool upIsPressed = false;
   bool downIsPressed = false;
   int likeCounter = 0;
+  var _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Tarea1'),
       ),
@@ -95,9 +97,19 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(
-                        Icons.mail,
-                        size: 45,
+                      IconButton(
+                        icon: Icon(
+                          Icons.mail,
+                        ),
+                        iconSize: 45,
+                        onPressed: () {
+                          _scaffoldKey.currentState.showSnackBar(
+                            SnackBar(
+                              content: Text("Enviando correo..."),
+                            ),
+                          );
+                          setState(() {});
+                        },
                       ),
                       Text("Correo"),
                     ],
@@ -107,9 +119,19 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(
-                        Icons.call,
-                        size: 45,
+                      IconButton(
+                        icon: Icon(
+                          Icons.call,
+                        ),
+                        iconSize: 45,
+                        onPressed: () {
+                          _scaffoldKey.currentState.showSnackBar(
+                            SnackBar(
+                              content: Text("Relizando llamada..."),
+                            ),
+                          );
+                          setState(() {});
+                        },
                       ),
                       Text("Llamar"),
                     ],
@@ -119,9 +141,19 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(
-                        Icons.directions,
-                        size: 45,
+                      IconButton(
+                        icon: Icon(
+                          Icons.directions,
+                        ),
+                        iconSize: 45,
+                        onPressed: () {
+                          _scaffoldKey.currentState.showSnackBar(
+                            SnackBar(
+                              content: Text("Mostrando Ruta..."),
+                            ),
+                          );
+                          setState(() {});
+                        },
                       ),
                       Text("Ruta"),
                     ],
