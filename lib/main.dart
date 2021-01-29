@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
+      title: 'is715773 Tarea',
       home: HomePage(),
     );
   }
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('Tarea1'),
+        title: Text('Tarea 2'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 8,
-                vertical: 16,
+                vertical: 0,
               ),
               child: Row(
                 children: [
@@ -61,31 +61,36 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.thumb_up,
-                      color: upIsPressed ? Colors.blue : Colors.grey,
-                    ),
-                    onPressed: () {
-                      upIsPressed = !upIsPressed;
-                      likeCounter++;
-                      setState(() {});
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.thumb_down,
-                      color: downIsPressed ? Colors.red : Colors.grey,
-                    ),
-                    onPressed: () {
-                      downIsPressed = !downIsPressed;
-                      likeCounter--;
-                      setState(() {});
-                    },
-                  ),
-                  Text("$likeCounter"),
-                  SizedBox(
-                    width: 8,
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Icon(
+                              Icons.thumb_up,
+                              color: upIsPressed ? Colors.blue : Colors.grey,
+                            ),
+                            onPressed: () {
+                              upIsPressed = !upIsPressed;
+                              likeCounter++;
+                              setState(() {});
+                            },
+                          ),
+                          IconButton(
+                            icon: Icon(
+                              Icons.thumb_down,
+                              color: downIsPressed ? Colors.red : Colors.grey,
+                            ),
+                            onPressed: () {
+                              downIsPressed = !downIsPressed;
+                              likeCounter--;
+                              setState(() {});
+                            },
+                          ),
+                        ],
+                      ),
+                      Text("$likeCounter"),
+                    ],
                   ),
                 ],
               ),
