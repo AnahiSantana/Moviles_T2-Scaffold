@@ -103,6 +103,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         iconSize: 45,
                         onPressed: () {
+                          _scaffoldKey.currentState.removeCurrentSnackBar();
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               content: Text("Enviando correo..."),
@@ -125,6 +126,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         iconSize: 45,
                         onPressed: () {
+                          _scaffoldKey.currentState.removeCurrentSnackBar();
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               content: Text("Relizando llamada..."),
@@ -147,6 +149,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         iconSize: 45,
                         onPressed: () {
+                          _scaffoldKey.currentState.removeCurrentSnackBar();
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               content: Text("Mostrando Ruta..."),
